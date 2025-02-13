@@ -1,0 +1,26 @@
+[project]
+name = "sample"
+version = "0.1.0"
+description = "Sample application for discussion"
+authors = [
+    {name = "Support",email = "support@openc3.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "requests (>=2.32.3,<3.0.0)",
+]
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+coverage = "^7.6.10"
+pytest = "^8.3.4"
+ruff = "^0.9.4"
+pytest-profiling = "^1.8.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
