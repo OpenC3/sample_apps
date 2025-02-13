@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_12_181243) do
-  create_table "groups", force: :cascade do |t|
+ActiveRecord::Schema[8.0].define(version: 2025_02_13_160948) do
+  create_table "companies", force: :cascade do |t|
     t.string "name"
+    t.boolean "customer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
