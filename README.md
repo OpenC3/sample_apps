@@ -1,2 +1,3 @@
-# sample_apps
+# Sample Apps
+
 Sample applications to discuss
