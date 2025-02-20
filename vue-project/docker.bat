@@ -1,0 +1,1 @@
+docker run -it -p 5173:5173 -v %cd%:/openc3/local -w /openc3/local docker.io/openc3inc/openc3-node sh
