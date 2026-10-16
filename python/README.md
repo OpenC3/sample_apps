@@ -4,16 +4,12 @@ This project uses [uv](https://docs.astral.sh/uv/) to manage Python, dependencie
 Please use uv for everything in this exercise: don't use `pip install`, `poetry`, or a manually
 created virtual environment for project dependencies.
 
-Start the docker container, which gives you a bash prompt with this directory mounted:
+Start the docker container, which gives you a bash prompt with this directory mounted
+and uv already installed:
 
     ./docker.sh        # docker.bat on Windows
 
-Inside the container, install uv and add it to your `PATH`:
-
-    curl -LsSf https://astral.sh/uv/install.sh | sh
-    source $HOME/.local/bin/env
-
-Setup the environment:
+Inside the container, setup the environment:
 
     uv sync
 
