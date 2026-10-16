@@ -1,12 +1,12 @@
 import os
 
+
 class GetEnv:
     def __init__(self):
-        self.stdout = ''
-    
+        self.stdout = ""
+
     def run(self):
-        if os.environ['ENV'] == 'prod':
-            self.stdout = 'Production environment'
+        if os.environ["ENV"] == "prod":
+            self.stdout = "Production environment"
         else:
-            self.stdout = 'Development environment'
-    
+            self.stdout = "Development environment"
