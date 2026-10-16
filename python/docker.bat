@@ -1,1 +1,1 @@
-docker run -it -v %cd%:/openc3/local -w /openc3/local python:3.10 /bin/bash
+docker run -it -v %cd%:/openc3/local -w /openc3/local python:3.14 /bin/bash
