@@ -6,21 +6,29 @@ authors = [
     {name = "Support",email = "support@openc3.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.10,<4.0"
+requires-python = ">=3.14,<4.0"
 dependencies = [
-    "requests (>=2.32.3,<3.0.0)",
+    "requests>=2.32.3,<3.0.0",
 ]
 
-[tool.poetry.group.dev.dependencies]
-black = "^25.1.0"
-coverage = "^7.6.10"
-pytest = "^8.3.4"
-ruff = "^0.9.4"
-pytest-profiling = "^1.8.1"
+[dependency-groups]
+dev = [
+    "coverage>=7.6.10,<8.0.0",
+    "pytest>=8.3.4,<9.0.0",
+    "pytest-profiling>=1.8.1,<2.0.0",
+    "ruff>=0.17.1",
+    "ty>=0.0.89",
+]
 
-[build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+[tool.uv]
+package = false
 
-[tool.poetry]
-package-mode = false
+[tool.ruff]
+target-version = "py314"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.ty.environment]
+python-version = "3.14"

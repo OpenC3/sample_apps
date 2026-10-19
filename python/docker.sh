@@ -1,1 +1,1 @@
-docker run -it -v `pwd`:/openc3/local:z -w /openc3/local python:3.10 /bin/bash
+docker run -it -v `pwd`:/openc3/local:z -w /openc3/local -e UV_PROJECT_ENVIRONMENT=/opt/venv ghcr.io/astral-sh/uv:python3.14-trixie /bin/bash
