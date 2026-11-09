@@ -16,7 +16,7 @@ const videoType = ref('')
 const videoReady = computed(() => !!videoSrc.value && !!videoType.value)
 
 async function updateVideoType() {
-  const fetchResult = await fetch(videoSrc.value, { methods: 'HEAD' })
+  const fetchResult = await fetch(videoSrc.value, { method: 'HEAD' })
   videoType.value = fetchResult.headers.get('Content-Type')
 }
 
