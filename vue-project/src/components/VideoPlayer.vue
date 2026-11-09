@@ -7,33 +7,20 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      videoSrc: 'https://media.xiph.org/mango/tears_of_steel_1080p.webm',
-      videoType: '',
-    }
-  },
-  computed: {
-    videoReady: function () {
-      return !!this.videoSrc && !!this.videoType
-    },
-  },
-  watch: {
-    videoSrc: {
-      handler: function () {
-        this.updateVideoType()
-      },
-    },
-  },
-  methods: {
-    async updateVideoType() {
-      const fetchResult = await fetch(this.videoSrc, { methods: 'HEAD' })
-      this.videoType = fetchResult.headers.get('Content-Type')
-    },
-  },
+<script setup>
+import { ref, computed, watch } from 'vue'
+
+const videoSrc = ref('https://media.xiph.org/mango/tears_of_steel_1080p.webm')
+const videoType = ref('')
+
+const videoReady = computed(() => !!videoSrc.value && !!videoType.value)
+
+async function updateVideoType() {
+  const fetchResult = await fetch(videoSrc.value, { methods: 'HEAD' })
+  videoType.value = fetchResult.headers.get('Content-Type')
 }
+
+watch(videoSrc, updateVideoType)
 </script>
 
 <style scoped>
